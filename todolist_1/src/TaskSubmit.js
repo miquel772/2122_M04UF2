@@ -1,7 +1,9 @@
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+
 function TaskSubmit ()
 {
 	return (
-		<button>Añadir</button>
+		<button><AddCircleIcon /></button>
 	);
 
 }
