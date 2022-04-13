@@ -1,17 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
-import Title from './Title.js';
-import Form from './Form.js';
-import TaskList from './TaskList.js';
+import React from 'react';
+//import './App.css';
+import Title from './Title';
+import TaskForm from './TaskForm';
+import TaskList from './TaskList';
 
-function App() {
-  return (
-    <div className="App">
-	<Title />
-	<Form />
-	<TaskList />
-    </div>
-  );
+class App extends React.Component{
+	constructor(props){
+		super(props);
+		this.state = {
+			tasks: []
+		};
+	}
+
+	componentWillMount(){
+		fetch("http://192.168.3.52:3030/")
+			.then(response => response.json())
+			.then(data => this.setTasks(data));
+	}
+
+	setTasks = data => {
+		console.log(data);
+		for (let i = 0; i < data.length; i++)
+			this.state.tasks.push(data[i].task);
+
+		this.setState({
+			tasks: this.state.tasks
+		});
+	};
+
+	addTask = task => {
+		this.state.tasks.push(task);
+		this.setState({
+			tasks: this.state.tasks
+		});
+
+		fetch('http://192.168.3.52:3030/', {
+			method: 'POST',
+			body: '{"task":"'+task+'"}'
+		});
+	}
+
+
+	removeTask = id_task => {
+		this.state.tasks.splice(id_task, 1);
+		this.setState({
+			tasks: this.state.tasks
+		});
+	}
+
+
+	render(){
+		return (
+<div className="App">
+<Title />
+<TaskForm addTask={this.addTask} />
+<TaskList tasks={this.state.tasks} removeTask={this.removeTask}/>
+</div>
+		);
+  }
 }
 
 export default App;
