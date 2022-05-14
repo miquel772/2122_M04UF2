@@ -13,7 +13,7 @@ class App extends React.Component{
 	}
 
 	componentWillMount(){
-		fetch("http://192.168.3.52:3030/")
+		fetch("http://192.168.3.63:3030/")
 			.then(response => response.json())
 			.then(data => this.setTasks(data));
 	}
@@ -34,7 +34,7 @@ class App extends React.Component{
 			tasks: this.state.tasks
 		});
 
-		fetch('http://192.168.3.52:3030/', {
+		fetch('http://192.168.3.63:3030/', {
 			method: 'POST',
 			body: '{"task":"'+task+'"}'
 		});
