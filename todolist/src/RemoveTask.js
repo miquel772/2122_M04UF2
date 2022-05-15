@@ -8,6 +8,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import DeleteForeverRoundedIcon from '@mui/icons-material/DeleteForeverRounded';
 
 class RemoveTask extends React.Component 
 {
@@ -38,20 +39,15 @@ class RemoveTask extends React.Component
 		this.closeDialog();
 	};
 
-
-
-
-
 	render (){
 		return (
 		<div>
-		<Button startIcon={<DeleteIcon />} onClick={this.openDialog}>BORRAR</Button>
+		<Button startIcon={<DeleteForeverRoundedIcon />} onClick={this.openDialog}></Button>
 
 		<Dialog open={this.state.open} onClose={this.closeDialog}>
-		<DialogTitle>Borrar tarea</DialogTitle>
 		<DialogContent>
 		<DialogContentText>
-			¿Quieres borrar "NOMBRE TAREA"?
+			¿ELIMINAR TAREA?
 		</DialogContentText>
 		</DialogContent>
 		<DialogActions>

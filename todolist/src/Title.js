@@ -3,7 +3,7 @@ function Title ()
 {
 	return (
 		<header>
-			<h1>ToDo App en React</h1>
+			<h1>MIQUEL TODOLIST</h1>
 		</header>
 	);
 

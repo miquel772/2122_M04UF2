@@ -1,7 +1,7 @@
 import React from 'react';
 import TaskItem from './TaskItem';
 
-import List from '@mui/material/List';
+import {Box, Grid, List} from '@mui/material';
 
 class TaskList extends React.Component{
 	constructor(props){
@@ -22,9 +22,15 @@ class TaskList extends React.Component{
 		}
 
 		return (
-		<List>
-			{tasks}
-		</List>
+		<Box sx={{width:'400', bgcolor:'#cfe1b9'}}>
+			<List>
+				<Grid container sx={{color: 'text.primary' }}>
+					{tasks}
+				</Grid>
+			</List>
+		</Box>
+
+
 		);
 	}
 }

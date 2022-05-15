@@ -2,6 +2,8 @@ import React from 'react';
 
 import TextField from '@mui/material/TextField';
 
+import {Box} from '@mui/material'
+
 class TaskInput extends React.Component{
 	constructor(props){
 		super(props);
@@ -21,7 +23,9 @@ class TaskInput extends React.Component{
 
 	render() {
 		return (
-		<TextField label="Tarea" onChange={this.handleChange} value={this.props.value}/>
+		<Box sx={{width: '400', maxWidth: '100%',}}>
+		<TextField fullWidth variant="filled" label="Tarea" onChange={this.handleChange} value={this.props.value}/>
+		</Box>
 		);
 	}
 }
