@@ -13,11 +13,6 @@ class TaskForm extends React.Component{
 	handleSubmit = (event) => {
 		event.preventDefault();
 		this.props.addTask(this.state.task);
-
-		this.state.task = "";
-		this.setState({
-			task: this.state.task
-		});
 	}
 
 	handleChange = (event) => {

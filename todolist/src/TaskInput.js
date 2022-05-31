@@ -8,7 +8,7 @@ class TaskInput extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			value: props.value
+			value: ""
 		};
 	}
 
@@ -19,6 +19,7 @@ class TaskInput extends React.Component{
 		this.setState({
 			value: event.target.value
 		});
+		event.preventDefault();
 	}
 
 	render() {
