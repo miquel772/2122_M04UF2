@@ -25,7 +25,7 @@ class TaskInput extends React.Component{
 	render() {
 		return (
 		<Box sx={{width: '400', maxWidth: '100%',}}>
-		<TextField fullWidth variant="filled" label="Tarea" onChange={this.handleChange} value={this.props.value}/>
+		<TextField fullWidth variant="filled" label="Tarea" onChange={this.handleChange} value={this.state.value}/>
 		</Box>
 		);
 	}

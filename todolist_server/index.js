@@ -63,9 +63,10 @@ http.createServer(function(req, res){
 
 	}
 
-	let tasks = db.collection("tasks").find();
-	tasks.toArray(function(err, data){
-		let tasks_string = JSON.stringify(data);
+	let task_o = db.collection("tasks").find();
+	let tasks_string;
+	task_o.toArray(function(err, data){
+		tasks_string = JSON.stringify(data);
 		res.end(tasks_string);
 		return;
 	});

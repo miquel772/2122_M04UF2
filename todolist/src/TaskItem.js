@@ -14,7 +14,10 @@ function TaskItem (props)
 		{props.task}
 		</Grid>
 		<Grid item xs={0}>
-		<RemoveTask id_task={props.id_task} removeTask={props.removeTask}/>
+		<RemoveTask task_id={props.task_id}
+					task={props.task}
+					order={props.order}
+					removeTask={props.removeTask}/>
 		</Grid>
 		</ListItem>
 	);

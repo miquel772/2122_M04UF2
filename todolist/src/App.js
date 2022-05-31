@@ -64,7 +64,9 @@ class App extends React.Component{
 	<div className="App">
 		<Title />
 		<TaskForm addTask={this.addTask} />
-		<TaskList tasks={this.state.tasks} removeTask={this.removeTask}/>
+		<TaskList 	tasks={this.state.tasks} 
+					tasks_id={this.state.tasks_id}
+					removeTask={this.removeTask}/>
 	</div>
 		);
   }

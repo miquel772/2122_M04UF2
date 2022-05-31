@@ -17,27 +17,25 @@ class RemoveTask extends React.Component
 
 		this.state = {
 			open: false
-		}
+		};
 	}
 
 	openDialog = () => {
-		this.state.open = true;
 		this.setState({
-			open: this.state.open
+			open: true
 		});
 	};
 
 	closeDialog = () => {
-		this.state.open = false;
 		this.setState({
-			open: this.state.open
+			open: false
 		});
 	};
 
 	removeTask = () => {
 		this.props.removeTask(this.props.task,this.props.order, this.props.task_id);
-		this.closeDialog();
-	};
+		this.setState({open : false});
+	}
 
 	render (){
 		return (
